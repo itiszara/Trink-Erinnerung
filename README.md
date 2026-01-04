@@ -3,6 +3,7 @@
 Die **Trink-Erinnerung** ist eine kleine Desktop-Anwendung für Windows, die dich regelmäßig ans Trinken erinnert. Sie läuft im **Tray**, zeigt motivierende Benachrichtigungen und kann automatisch beim Windows-Start gestartet werden.
 
 ## Funktionen
+## Funktionen
 
 - Zufällige motivierende Trink-Erinnerungen  
 - Tray-Icon mit Rechtsklick-Menü zum Beenden  
