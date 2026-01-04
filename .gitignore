@@ -1,0 +1,24 @@
+# Python Bytecode
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtuelle Umgebung
+venv/
+env/
+
+# PyInstaller Build-Ordner (ignore nur temporäre Dateien)
+build/
+*.spec
+
+# Windows
+Thumbs.db
+*.log
+
+# IDEs
+.vscode/
+.idea/
+
+# Sonstiges
+.DS_Store
