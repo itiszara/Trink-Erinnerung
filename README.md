@@ -1,69 +1,44 @@
-Trink-Erinnerung mit Python
+# Trink-Erinnerung
 
-Dieses Skript zeigt regelmäßig eine Benachrichtigung an, um dich ans Trinken zu erinnern. Es funktioniert auf Windows aber mit ein paar kleinen Änderungen auch auf Linux und macOS.
+Die **Trink-Erinnerung** ist eine kleine Desktop-Anwendung für Windows, die dich regelmäßig ans Trinken erinnert. Sie läuft im **Tray**, zeigt motivierende Benachrichtigungen und kann automatisch beim Windows-Start gestartet werden.
 
-Funktionen
+## Funktionen
 
-Zufällige motivierende Trink-Erinnerungen
+- Zufällige motivierende Trink-Erinnerungen  
+- Tray-Icon mit Rechtsklick-Menü zum Beenden  
+- Anpassbare Intervalle zwischen den Erinnerungen  
+- Läuft als eigenständige **exe** – kein Python nötig  
 
-Unterstützung für Windows (win10toast) und Linux/macOS (plyer)
+## Nutzung
 
-Automatische Ausführung mit dem Windows Task Scheduler möglich
+### Exe starten
 
-Installation
+- Einfach `trink_erinnerung.exe` ausführen  
+- Die Anwendung läuft dann im Tray  
+- Notifications erscheinen automatisch  
 
-1️ Python installieren
+### Tray-Icon-Menü
 
-Falls du Python noch nicht installiert hast, lade es hier herunter: Python Download
+- Rechtsklick auf das Icon → **Beenden**, um die Anwendung zu schließen  
 
-2️ Notwendige Abhängigkeiten installieren
+## Automatischer Start beim Windows-Start
 
-Öffne eine Eingabeaufforderung (Windows) oder ein Terminal (Linux/macOS) und gib folgenden Befehl ein:
+### Option 1: Autostart-Ordner
 
-pip install plyer win10toast
+1. Drücke `Win + R` → `shell:startup` → Enter  
+2. Füge eine Verknüpfung zu deiner exe hinzu  
 
-Nutzung
+### Option 2: Task Scheduler
 
-Speichere das Skript als drink_reminder.py und führe es mit folgendem Befehl aus:
+1. Task Scheduler öffnen (`Win + S` → „Task Scheduler“)  
+2. Neue Aufgabe erstellen → Name vergeben (z. B. „Trink-Erinnerung“)  
+3. Trigger → **At log on** auswählen  
+4. Aktion → **Start a program** → Pfad zu deiner exe  
+5. Fertig → Testen  
 
-python drink_reminder.py
+## Anpassungen
 
-Falls du das Skript alle 30 Minuten automatisch ausführen möchtest, kannst du den Windows Task Scheduler verwenden:
+- Die Nachrichten kannst du im `trink_erinnerung.py`-Code im `toasts`-Array ändern und die exe neu bauen  
+- Das Icon der exe kann ebenfalls im Code angepasst werden  
 
-Windows Task Scheduler einrichten
-
-Task Scheduler öffnen (Windows-Taste drücken, nach "Task Scheduler" suchen und öffnen)
-
-Neue Aufgabe erstellen: Rechts auf "Create Basic Task" klicken
-
-Einen Namen vergeben: z. B. "Trink-Erinnerung"
-
-Trigger setzen: "Daily" auswählen, dann alle 30 Minuten wiederholen
-
-Aktion auswählen: "Start a Program"
-
-Pfad zur Python.exe eingeben (z. B. C:\Users\Admin\AppData\Local\Programs\Python\Python313\python.exe)
-
-Skript als Argument übergeben: C:\Pfad\zu\drink_reminder.py
-
-Fertigstellen und testen
-
-Linux/macOS: Automatische Ausführung mit cron
-
-Terminal öffnen und crontab -e eingeben
-
-Diese Zeile hinzufügen, um das Skript alle 30 Minuten auszuführen:
-
-*/30 * * * * /usr/bin/python3 /Pfad/zu/drink_reminder.py
-
-Anpassungen:
-
-Die Nachrichten kannst du im toasts-Array im Skript ändern oder erweitern.
-
-Falls du ein eigenes Symbol möchtest, ersetze icon_path in win10toast durch den Pfad zu deiner .ico-Datei.
-
-<<<<<<< HEAD
-Viel Spaß und bleib hydriert! 💧
-=======
-Viel Spaß und bleib hydriert! 💧
->>>>>>> ccdd72760f8cb01fd32e6d2c1e9e4daa3927ce99
+💧 Viel Spaß und bleib hydriert!
